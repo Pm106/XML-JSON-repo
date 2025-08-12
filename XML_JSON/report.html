@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSON Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+            font-size:larger;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="6.png" alt="logo"> <a class="navbar-brand " href="/">Dollat-Usha Institute of Applied Sciences and<br>
+          Dhiru-sarla institute of Management & Commerce,Valsad.</a>
+    </nav>
+    <h1>_Report Of Registeration_</h1><br><br>
+    <div id="tableContainer"></div><br><br>
+    <button id="downloadTable" onclick="downloadTable()">DOWNLOAD REPORT</button>
+
+    <script type="text/javascript">
+        var tableHtml = localStorage.getItem('tableHtml');
+        document.getElementById('tableContainer').innerHTML = tableHtml;
+
+        function downloadTable() {
+            var table = document.getElementById("tableContainer").getElementsByTagName("table")[0];
+            var html = table.outerHTML;
+            var blob = new Blob(["\ufeff", html], {
+                type: "application/vnd.ms-excel;charset=utf-8"
+            });
+            saveAs(blob, "report.xls");
+        }
+
+        function saveAs(blob, fileName) {
+            var link = document.createElement("a");
+            if (typeof link.download === "string") {
+                link.href = URL.createObjectURL(blob);
+                link.download = fileName;
+                link.click();
+            } else {
+                window.open(URL.createObjectURL(blob));
+            }
+        }
+    </script>
+
+</body>
+</html>

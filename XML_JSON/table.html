@@ -1,0 +1,115 @@
+html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>5 Column Table</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>5 Column Table:</h1>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <td>John</td>
+                <td>Jane</td>
+                <td>Bob</td>
+                <td>Bob</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Last Name</th>
+                <td>Doe</td>
+                <td>Smith</td>
+                <td>Johnson</td>
+                <td>Johnson</td>
+
+
+            </tr>
+            <tr>
+                <th>Email</th>
+
+                <td>john.doe@example.com</td>
+                <td>jane.smith@example.com</td>
+                <td>bob.johnson@example.com</td>
+                <td>bob.johnson@example.com</td>
+
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>555-555-5556</td>
+
+                <td>555-555-5557</td>
+                <td>555-555-5555</td>
+
+                <td>555-555-5557</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>456 Elm St.</td>
+
+                <td>123 Main St.</td>
+
+                <td>789 Oak St.</td>
+
+                <td>789 Oak St.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <td>' + jsonObj.name + '</td>
+
+
+
+        </tr>
+    </thead>
+    <tbody></tbody>
+
+    <tr>
+        <th>Age</th>
+        <td>' + jsonObj.age + '</td>
+
+
+    </tr>'
+
+    <tr>
+        <th>Mobile</th>
+        <td>' + jsonObj.mob + '</td>
+    </tr>
+    <tr>
+        <th>Course</th>
+        <td>' + jsonObj.cos + '</td>
+    </tr>
+
+    </tbody>
+</table>
+
+function viewTable() {
+var jsonObj = JSON.parse(jsonData);
+
+var tableHtml = '<table><thead><tr><th>Name</th><td>' + jsonObj.name + '</td></tr></thead><tbody>';
+        tableHtml += '<tr><th>Age</th><td>' + jsonObj.age + '</td></tr><tr><th>Mobile</th><td>' + jsonObj.mob + '</td></tr><tr><th>Course</th><td>' + jsonObj.cos + '</td></tr>';
+        tableHtml += '</tbody></table>';
+
+localStorage.setItem('tableHtml', tableHtml);
+window.location.href = 'report.html';
+}

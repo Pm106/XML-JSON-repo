@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>XML Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="6.png" alt="logo"> <a class="navbar-brand " href="/">Dollat-Usha Institute of Applied Sciences and<br>
+          Dhiru-sarla institute of Management & Commerce,Valsad.</a>
+    </nav>
+    <h1>Data Show IN Form Of XML:</h1>
+    <pre id="xmlResult"></pre>
+    <button id="convertToJson">Convert to JSON</button>
+
+    <script type="text/javascript">
+        var xmlData = decodeURIComponent(window.location.search.substring(1));
+        document.getElementById('xmlResult').textContent = xmlData;
+
+        document.getElementById('convertToJson').addEventListener('click', function () {
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(xmlData, 'text/xml');
+
+            var jsonData = {
+                name: xmlDoc.getElementsByTagName('name')[0].childNodes[0].nodeValue,
+                age: xmlDoc.getElementsByTagName('age')[0].childNodes[0].nodeValue,
+                mob: xmlDoc.getElementsByTagName('mob')[0].childNodes[0].nodeValue,
+                cos: xmlDoc.getElementsByTagName('Course')[0].childNodes[0].nodeValue
+            };
+
+            var jsonString = JSON.stringify(jsonData, null, 8);
+
+            var blob = new Blob([jsonString], { type: 'application/json' });
+            var url = window.URL.createObjectURL(blob);
+
+            // Open a new window or tab with the JSON data
+            var a = document.createElement('a');
+            a.href = 'jsonres.html?' + encodeURIComponent(jsonString);
+            a.target = '_blank';
+            a.click();
+
+            // Remove the "Convert to JSON" button
+            var convertButton = document.getElementById('convertToJson');
+            convertButton.parentNode.removeChild(convertButton);
+        });
+    </script>
+</body>
+</html>

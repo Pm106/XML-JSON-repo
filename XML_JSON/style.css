@@ -1,0 +1,262 @@
+    nav img {
+      width: 90px;
+      height: 90px;
+    }
+
+    nav div form input {
+      padding: 8px;
+      margin-right: 10px;
+      border: none;
+    }
+
+    nav div form button {
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+
+    }
+
+    .d-block {
+      height: 1400;
+      width: 600;
+    }
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+      font-family: 'Ravie';
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Ravie';
+    }
+
+    body {
+      font-family: 'Times New Roman';
+      font-size: x-large;
+      background-color: #c0c0c0;
+    }
+
+    h1 {
+      color: #333;
+      font-family: '';
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    h2 {
+      color: aliceblue;
+    }
+
+    @font-face {
+      font-family: myFirstFont;
+      src: url(sansation_light.woff);
+      font-weight: normal;
+    }
+
+    @font-face {
+      font-family: myFirstFont;
+      src: url(sansation_bold.woff);
+      font-weight: bold;
+    }
+
+    h1 {
+      font-weight: normal;
+    }
+
+    * {
+      font-family: myFirstFont;
+    }
+
+    button:hover {
+      background-color: #44c767;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      transition: font-size 0.5s ease;
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mpart7useLHR5F5MmMuVrWUgVc.woff2) format('woff2');
+    }
+
+    button:active {
+      filter: brightness(75%);
+      transition: filter 0.3s ease;
+    }
+
+    button:focus {
+      outline: none;
+      box-shadow: 0 0 2px 1px #333;
+    }
+
+    button:active {
+      filter: brightness(0.8);
+    }
+
+    body.page-loaded {
+      background-color: #f5f5f5;
+    }
+
+    body.page-loaded:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body.page-loaded:before .loading-animation {
+      animation: loading-animation 2s infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-animation {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      border-top-color: #3498db;
+      animation-timing-function: linear;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    th:hover,
+    td:hover {
+      background-color: #f5f5f5;
+      color: #3498db;
+      cursor: pointer;
+    }
+
+    th:active,
+    td:active {
+      filter: brightness(75%);
+    }
+
+    th:focus,
+    td:focus {
+      outline: none;
+      box-shadow: 0 0 2px 1px #333;
+    }
+
+    body {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #myForm {
+      width: 20%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 2cm;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    pre {
+      font-size: 1cm;
+      margin-bottom: 30px;
+      text-align-last: center;
+    }

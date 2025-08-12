@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>XML Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="6.png" alt="logo"> <a class="navbar-brand " href="/">Dollat-Usha Institute of Applied Sciences and<br>
+      Dhiru-sarla institute of Management & Commerce,Valsad.</a>
+  </nav>
+  <h1>Fill out this form for Registeration</h1>
+  <form id="myForm">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" required><br><br>
+    <label for="mob">Mobile No:</label><br>
+    <input type="number" id="mob" name="mob" required><br><br>
+    <label for="mob">Select Your Course:</label>
+    <select id="cos" name="cos" required aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option>BCA</option>
+      <option>BSC</option>
+      <option>BBA</option>
+    </select><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <script type="text/javascript">
+    document.getElementById('myForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value;
+      var age = document.getElementById('age').value;
+      var mob = document.getElementById('mob').value;
+      var cos = document.getElementById('cos').value;
+      var xmlData = '<?xml version="1.0"?>\n<person>\n<name>' + name + '</name>\n<age>' + age + '</age>\n<mob>' + mob + '<\mob>\n<Course>' + cos + '</Course>\n</person>';
+      var blob = new Blob([xmlData], { type: 'text/xml' });
+      var url = window.URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = 'result.html?' + encodeURIComponent(xmlData);
+      a.target = '_blank';
+      a.click();
+    });
+  </script>
+</body>
+</html>
